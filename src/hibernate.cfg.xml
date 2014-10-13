@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+	<hibernate-configuration>
+    	<session-factory>
+        	<mapping class="farmacie.model.Admin" />
+        	<mapping class="farmacie.model.Atribut_produs" />
+        	<mapping class="farmacie.model.Atribut" />
+        	<mapping class="farmacie.model.Produs" />
+        	<mapping class="farmacie.model.Categorie" />
+        	<mapping class="farmacie.model.Etalon" />
+        	<mapping class="farmacie.model.Poza" />
+        	<mapping class="farmacie.model.Arbore_categorii" />
+        	<mapping class="farmacie.model.Producator" />
+        	<mapping class="farmacie.model.CategorieAAtributelor" />
+    	</session-factory>
+ 
+	</hibernate-configuration>

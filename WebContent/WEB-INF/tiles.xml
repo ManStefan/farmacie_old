@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<!-- farmacie -->
+	
+    <definition name="homepage" template="/WEB-INF/jsp/homepage.jsp">
+        <put-attribute name="continut1" value="/WEB-INF/jsp/continut1.jsp" />
+        <put-attribute name="popup_menu_produse" value="/WEB-INF/jsp/popup_menu_produse.jsp" />
+        <put-attribute name="templatemo_bottom_section_content" value="/WEB-INF/jsp/templatemo_bottom_section_content.jsp" />
+        <put-attribute name="templatemo_footer_section" value="/WEB-INF/jsp/templatemo_footer_section.jsp" />
+        <put-attribute name="templatemo_menu_panel" value="/WEB-INF/jsp/templatemo_menu_panel.jsp" />
+        <put-attribute name="templatemo_search_section" value="/WEB-INF/jsp/templatemo_search_section.jsp" />
+        <put-attribute name="head" value="/WEB-INF/jsp/head.jsp" />
+        <put-attribute name="bottom" value="/WEB-INF/jsp/bottom.jsp" />
+    </definition>
+    
+    <definition name="paginaProdus" template="/WEB-INF/jsp/paginaProdus.jsp">
+        <put-attribute name="popup_menu_produse" value="/WEB-INF/jsp/popup_menu_produse.jsp" />
+        <put-attribute name="templatemo_bottom_section_content" value="/WEB-INF/jsp/templatemo_bottom_section_content.jsp" />
+        <put-attribute name="templatemo_footer_section" value="/WEB-INF/jsp/templatemo_footer_section.jsp" />
+        <put-attribute name="templatemo_menu_panel" value="/WEB-INF/jsp/templatemo_menu_panel.jsp" />
+        <put-attribute name="templatemo_search_section" value="/WEB-INF/jsp/templatemo_search_section.jsp" />
+        <put-attribute name="head" value="/WEB-INF/jsp/head.jsp" />
+        <put-attribute name="bottom" value="/WEB-INF/jsp/bottom.jsp" />
+        <put-attribute name="continut_produs_detaliat" value="/WEB-INF/jsp/continut_produs_detaliat.jsp" />
+    </definition>
+    
+    <definition name="produse" template="/WEB-INF/jsp/produse.jsp">
+        <put-attribute name="popup_menu_produse" value="/WEB-INF/jsp/popup_menu_produse.jsp" />
+        <put-attribute name="templatemo_bottom_section_content" value="/WEB-INF/jsp/templatemo_bottom_section_content.jsp" />
+        <put-attribute name="templatemo_footer_section" value="/WEB-INF/jsp/templatemo_footer_section.jsp" />
+        <put-attribute name="templatemo_menu_panel" value="/WEB-INF/jsp/templatemo_menu_panel.jsp" />
+        <put-attribute name="templatemo_search_section" value="/WEB-INF/jsp/templatemo_search_section.jsp" />
+        <put-attribute name="filter_produse" value="/WEB-INF/jsp/filter_produse.jsp" />
+        <put-attribute name="paginare_produse" value="/WEB-INF/jsp/paginare_produse.jsp" />
+        <put-attribute name="listaProduse" value="/WEB-INF/jsp/listaProduse.jsp" />
+        <put-attribute name="head" value="/WEB-INF/jsp/head.jsp" />
+        <put-attribute name="bottom" value="/WEB-INF/jsp/bottom.jsp" />
+    </definition>    
+    
+    <definition name="contact" template="/WEB-INF/jsp/contact.jsp">
+    	<put-attribute name="continut_contact" value="/WEB-INF/jsp/continut_contact.jsp" />
+        <put-attribute name="templatemo_bottom_section_content" value="/WEB-INF/jsp/templatemo_bottom_section_content.jsp" />
+        <put-attribute name="templatemo_footer_section" value="/WEB-INF/jsp/templatemo_footer_section.jsp" />
+        <put-attribute name="templatemo_menu_panel" value="/WEB-INF/jsp/templatemo_menu_panel.jsp" />
+        <put-attribute name="templatemo_search_section" value="/WEB-INF/jsp/templatemo_search_section.jsp" />
+        <put-attribute name="head" value="/WEB-INF/jsp/head.jsp" />
+        <put-attribute name="bottom" value="/WEB-INF/jsp/bottom.jsp" />
+    </definition>    
+    <!-- farmacie -->
+    
+    <!-- admin -->
+    <definition name="adminCategorii" template="/WEB-INF/jsp/admin/adminCategorii.jsp">
+        <put-attribute name="adminCategoriiContent" value="/WEB-INF/jsp/admin/adminCategoriiContent.jsp" />
+    </definition>
+
+    <definition name="adminAtribute" template="/WEB-INF/jsp/admin/adminAtribute.jsp">
+        <put-attribute name="adminAtributeContent" value="/WEB-INF/jsp/admin/adminAtributeContent.jsp" />
+    </definition>
+    
+    <definition name="adminProducatori" template="/WEB-INF/jsp/admin/adminProducatori.jsp">
+        <put-attribute name="adminProducatoriContent" value="/WEB-INF/jsp/admin/adminProducatoriContent.jsp" />
+    </definition>
+    
+    <definition name="adminEtaloane" template="/WEB-INF/jsp/admin/adminEtaloane.jsp">
+        <put-attribute name="adminEtaloaneContent" value="/WEB-INF/jsp/admin/adminEtaloaneContent.jsp" />
+    </definition>    
+    
+    <definition name="adminProduse" template="/WEB-INF/jsp/admin/adminProduse.jsp">
+        <put-attribute name="adminProduseContent" value="/WEB-INF/jsp/admin/adminProduseContent.jsp" />
+    </definition>    
+    
+    <definition name="adminEditareProduse" template="/WEB-INF/jsp/admin/adminEditareProduse.jsp">
+        <put-attribute name="adminEditareProduseContent" value="/WEB-INF/jsp/admin/adminEditareProduseContent.jsp" />
+    </definition>           
+    
+    <definition name="index" template="/WEB-INF/jsp/admin/index.jsp">
+    	<put-attribute name="content" value="/WEB-INF/jsp/admin/content.jsp" />
+    </definition>
+    
+    
+    <definition name="childrenCategories" template="/WEB-INF/jsp/admin/childrenCategories.jsp">
+    </definition>    
+    
+    <definition name="addChildCategory" template="/WEB-INF/jsp/admin/addChildCategory.jsp">
+    </definition>   
+    
+    <definition name="addBrotherCategory" template="/WEB-INF/jsp/admin/addBrotherCategory.jsp">
+    </definition>   
+    
+    <definition name="updateNameCat" template="/WEB-INF/jsp/admin/updateNameCat.jsp">
+    </definition>       
+ 
+    <definition name="deleteCategory" template="/WEB-INF/jsp/admin/deleteCategory.jsp">
+    </definition>    
+    
+    <definition name="finishDeleteCategory" template="/WEB-INF/jsp/admin/finishDeleteCategory.jsp">
+    </definition>    
+
+    <definition name="addNewAttrCat" template="/WEB-INF/jsp/admin/addNewAttrCat.jsp">
+    </definition>    
+ 
+     <definition name="addNewProducator" template="/WEB-INF/jsp/admin/addNewProducator.jsp">
+    </definition>    
+    
+    <definition name="searchAttrCat" template="/WEB-INF/jsp/admin/searchAttrCat.jsp">
+    </definition>      
+
+    <definition name="renameAttrCat" template="/WEB-INF/jsp/admin/renameAttrCat.jsp">
+    </definition>   
+    
+    <definition name="deleteAttrCat" template="/WEB-INF/jsp/admin/deleteAttrCat.jsp">
+    </definition>   
+    
+    <definition name="addNewAttr" template="/WEB-INF/jsp/admin/addNewAttr.jsp">
+    </definition>   
+    
+    <definition name="searchAttr" template="/WEB-INF/jsp/admin/searchAttr.jsp">
+    </definition>     
+ 
+    <definition name="renameAttr" template="/WEB-INF/jsp/admin/renameAttr.jsp">
+    </definition>     
+    
+    <definition name="deleteAttr" template="/WEB-INF/jsp/admin/deleteAttr.jsp">
+    </definition>     
+ 
+    <definition name="finishDeleteAttr" template="/WEB-INF/jsp/admin/finishDeleteAttr.jsp">
+    </definition>    
+    
+    <definition name="searchProducatori" template="/WEB-INF/jsp/admin/searchProducatori.jsp">
+    </definition>       
+    
+    <definition name="renameProducator" template="/WEB-INF/jsp/admin/renameProducator.jsp">
+    </definition> 
+    
+    <definition name="deleteProducator" template="/WEB-INF/jsp/admin/deleteProducator.jsp">
+    </definition>    
+    
+    <definition name="finishDeleteProducator" template="/WEB-INF/jsp/admin/finishDeleteProducator.jsp">
+    </definition>         
+    
+    <definition name="searchCategorie" template="/WEB-INF/jsp/admin/searchCategorie.jsp">
+    </definition>   
+    
+    <definition name="searchProduseDupaNumeCategorie" template="/WEB-INF/jsp/admin/searchProduseDupaNumeCategorie.jsp">
+    </definition>           
+
+    <definition name="obtineDetaliiProdusSelectat" template="/WEB-INF/jsp/admin/obtineDetaliiProdusSelectat.jsp">
+    </definition>           
+
+    
+    <definition name="atributeForProduct" template="/WEB-INF/jsp/admin/atributeForProduct.jsp">
+    </definition>    
+    
+    <definition name="imageForProduct" template="/WEB-INF/jsp/admin/imageForProduct.jsp">
+    </definition>     
+    
+    <definition name="adaugaProdusNou" template="/WEB-INF/jsp/admin/adaugaProdusNou.jsp">
+    </definition>    
+    
+    <definition name="valideazaProdus" template="/WEB-INF/jsp/admin/valideazaProdus.jsp">
+    </definition>      
+    
+    <definition name="addNewEtalon" template="/WEB-INF/jsp/admin/addNewEtalon.jsp">
+    </definition>   
+    
+    <definition name="searchEtaloane" template="/WEB-INF/jsp/admin/searchEtaloane.jsp">
+    </definition>  
+    
+    <definition name="renameEtalon" template="/WEB-INF/jsp/admin/renameEtalon.jsp">
+    </definition>   
+    
+    <definition name="deleteEtalon" template="/WEB-INF/jsp/admin/deleteEtalon.jsp">
+    </definition> 
+    
+    <definition name="finishDeleteEtalon" template="/WEB-INF/jsp/admin/finishDeleteEtalon.jsp">
+    </definition>   
+    
+    <definition name="deleteExistingPicture" template="/WEB-INF/jsp/admin/deleteExistingPicture.jsp">
+    </definition> 
+    
+    <definition name="modificaProdus" template="/WEB-INF/jsp/admin/modificaProdus.jsp">
+    </definition>   
+    
+    <definition name="stergeProdus" template="/WEB-INF/jsp/admin/stergeProdus.jsp">
+    </definition>  
+    
+    <definition name="inline-error" template="/WEB-INF/jsp/admin/inline-error.jsp">
+    </definition>              
+    <!-- admin -->
+    
+</tiles-definitions>

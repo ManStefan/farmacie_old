@@ -1,0 +1,93 @@
+<project name="FARMACIE" default="deploy-farmacie" basedir=".">
+	
+	<!-- PROPRIETATI CONFIGURABILE: -->
+	<property file="build.properties"/>
+	
+	<property name="farmacie.project.dir" value="${eclipse.workspace.dir}/farmacie" />
+	<property name="farmacie.project.src.dir" value="${farmacie.project.dir}/src" />
+	<property name="farmacie.project.classes.dir" value="${farmacie.project.dir}/WebContent/WEB-INF/classes" />
+	<property name="farmacie.project.webcontent.dir" value="${farmacie.project.dir}/WebContent" />
+	<property name="farmacie.project.lib.dir" value="${farmacie.project.dir}/WebContent/WEB-INF/lib" />
+		
+	<property name="temp.dir.web-inf" value="${temp.dir}/WEB-INF" />
+	<property name="temp.dir.lib" value="${temp.dir.web-inf}/lib" />
+	<property name="temp.dir.classes" value="${temp.dir.web-inf}/classes" />
+	<property name="temp.dir.meta-inf" value="${temp.dir}/META-INF" />
+
+	<property name="deploy.dir.web-inf" value="${deploy.dir}/WEB-INF" />
+	<property name="deploy.dir.lib" value="${deploy.dir.web-inf}/lib" />
+	<property name="deploy.dir.classes" value="${deploy.dir.web-inf}/classes" />
+	<property name="deploy.dir.meta-inf" value="${deploy.dir}/META-INF" />
+	
+	<target name="clean">
+		<delete dir="${temp.dir}" />
+		<delete dir="${temp.dir.lib}" />
+		<delete dir="${temp.dir.classes}" />
+		<delete dir="${temp.dir.meta-inf}" />
+		<delete dir="${temp.dir.web-inf}" />
+	</target>
+
+	<path id="build.class.path">
+		<fileset dir="${farmacie.project.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${tomcat.dir}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${java.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="prepare" depends="clean">
+		<mkdir dir="${temp.dir}" />
+		<mkdir dir="${temp.dir.lib}" />
+		<mkdir dir="${temp.dir.meta-inf}" />
+		<mkdir dir="${temp.dir.web-inf}" />
+		<mkdir dir="${temp.dir.classes}" />			
+	</target>
+	
+
+	<target name="compile-farmacie"  depends="prepare">
+		<echo>=== COMPILE FARMACIE===</echo>
+		<echo>Compiling ${farmacie.project.src.dir} files ...</echo>
+		<javac debug="on" srcdir="${farmacie.project.src.dir}" destdir="${temp.dir.classes}" includes="**/*" includeantruntime="false">
+			<classpath refid="build.class.path" />
+		</javac>
+	</target>
+	
+	<target name="package-farmacie" depends="compile-farmacie">
+		<echo>=== PACKAGE FARMACIE===</echo>
+		
+		<!-- Sterg fisierul impachetat care ar putea fi in aceasta cale de la o impachetare anterioara -->
+		<delete file="${package.dir}/farmacie.war" />
+		
+		<!-- Copiez continutul directorului WebContent -->
+		<echo>Copy from ${farmacie.project.webcontent.dir} minus classes to ${temp.dir}...</echo>
+		<copy todir="${temp.dir}" overwrite="true">
+			<fileset dir="${farmacie.project.webcontent.dir}">
+				<exclude name="**/classes/**" />
+				<exclude name="*.class" />
+				<exclude name=".project" />
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+
+		<!-- Copiez din directorul src tot in afara de surse-->
+		<echo>Copy ${farmacie.project.src.dir} minus sources to ${temp.dir.classes}...</echo>
+		<copy todir="${temp.dir.classes}" overwrite="true">
+			<fileset dir="${farmacie.project.src.dir}">
+				<exclude name="farmacie/**" />
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+		
+		<war destfile="${package.dir}/farmacie.war" webxml="${temp.dir.web-inf}/web.xml" basedir="${temp.dir}">
+		</war>
+	</target>
+
+	<target name="deploy-farmacie" depends="package-farmacie" description="Deploy doar proiect FARMACIE">
+		<echo>=== DEPLOY CORE===</echo>
+		<copy file="${package.dir}/farmacie.war" tofile="${deploy.dir}" overwrite="true" />
+	</target>
+</project>

@@ -1,0 +1,1 @@
+${model.produse_search_dupa_nume_results}
